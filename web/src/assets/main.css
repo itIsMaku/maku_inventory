@@ -4,18 +4,34 @@
 
 @layer base {
 
-  html,
-  body,
-  #root {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
+    html,
+    body,
+    #root {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
 
-  * {
-    box-sizing: border-box;
-    min-width: 0;
-  }
+    * {
+        box-sizing: border-box;
+        min-width: 0;
+    }
+
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #555;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #424242;
+    }
 }
 
 @layer components {}

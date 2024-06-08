@@ -1,9 +1,9 @@
 lib = {
     settings = {},
 
-    CFX = {},
-    locales = {},
-    log = {},
+    shared = {},
+    client = {},
+    server = {},
 }
 
 lib.settings.Debug = GetConvarInt('maku_inventory:debug', 0) == 1

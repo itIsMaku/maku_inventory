@@ -43,20 +43,24 @@ function log.table(_table, debug)
     print(json.encode(_table, { indent = true }))
 end
 
-lib.log.origin = log
+lib.shared.log = log
 
-function lib.log.error(value, ...)
+function lib.shared.error(value, ...)
     return error(value:format(...))
 end
 
-function lib.log.warn(value, ...)
+function lib.shared.warn(value, ...)
     return warn(value:format(...))
 end
 
-function lib.log.debug(value, ...)
+function lib.shared.debug(value, ...)
     return log.debug(value, ...)
 end
 
-function lib.log.info(value, ...)
+function lib.shared.info(value, ...)
     return log.info(value, ...)
+end
+
+function lib.shared.debugTable(value)
+    return log.table(value, true)
 end

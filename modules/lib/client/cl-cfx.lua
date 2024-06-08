@@ -1,7 +1,7 @@
 --- Load a model.
 --- @param model string|number The model name or hash.
 --- @return number model The model hash.
-function lib.CFX.LoadModel(model)
+function lib.client.LoadModel(model)
     if type(model) == 'string' then
         model = joaat(model)
     end
@@ -30,7 +30,7 @@ end
 --- Create new blip on the map.
 --- @param blipData BlipData The blip data.
 --- @return number blip The blip handle.
-function lib.CFX.CreateBlip(blipData)
+function lib.client.CreateBlip(blipData)
     local blip = AddBlipForCoord(blipData.coords.x, blipData.coords.y, blipData.coords.z)
 
     if blipData.sprite ~= nil then
@@ -89,7 +89,7 @@ end
 --- Remove a blip from the map.
 --- @param blip number The blip handle.
 --- @return boolean success true if the blip was removed, false otherwise.
-function lib.CFX.RemoveBlip(blip)
+function lib.client.RemoveBlip(blip)
     if not DoesBlipExist(blip) then return false end
 
     RemoveBlip(blip)
@@ -101,7 +101,7 @@ end
 --- @param blip number The blip handle.
 --- @param label string The new blip label.
 --- @return boolean success true if the blip was renamed, false otherwise.
-function lib.CFX.RenameBlip(blip, label)
+function lib.client.RenameBlip(blip, label)
     if not DoesBlipExist(blip) then return false end
 
     BeginTextCommandSetBlipName('STRING')
@@ -109,4 +109,13 @@ function lib.CFX.RenameBlip(blip, label)
     EndTextCommandSetBlipName(blip)
 
     return true
+end
+
+--- Register a key mapping.
+--- @param options table The key mapping options.
+--- @param callback function The key mapping callback.
+function lib.client.RegisterKey(options, callback)
+    local command = string.format('maku_inventory:%s', options.name)
+    RegisterCommand(command, callback, false)
+    RegisterKeyMapping(command, options.description, options.mapper, options.key)
 end

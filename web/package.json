@@ -1,0 +1,61 @@
+{
+    "name": "maku_inventory",
+    "homepage": "web/build",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+        "start": "concurrently \"yarn tailwind:watch\" \"vite\"",
+        "start:game": "concurrently \"yarn tailwind:watch\" \"vite build --watch --emptyOutDir\"",
+        "build:tailwind": "npx tailwindcss -i ./src/assets/main.css -o ./public/output.css --minify",
+        "build": "yarn build:tailwind && tsc && vite build --emptyOutDir",
+        "preview": "vite preview",
+        "code:check": "yarn eslint src && tsc",
+        "tailwind:watch": "npx tailwindcss -i ./src/assets/main.css -o ./public/output.css --watch --minify"
+    },
+    "dependencies": {
+        "@hookform/resolvers": "^3.3.2",
+        "@radix-ui/react-slot": "^1.0.2",
+        "@tanstack/react-table": "^8.16.0",
+        "class-variance-authority": "^0.7.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-hook-form": "^7.47.0",
+        "react-icons": "^5.1.0",
+        "tailwind-merge": "^1.14.0",
+        "zod": "^3.22.4"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.15",
+        "@types/react-dom": "^18.0.9",
+        "@typescript-eslint/eslint-plugin": "^5.59.0",
+        "@typescript-eslint/parser": "^5.59.0",
+        "@vitejs/plugin-react": "^2.2.0",
+        "autoprefixer": "^10.4.16",
+        "clsx": "^2.0.0",
+        "concurrently": "^8.2.1",
+        "eslint": "^8.38.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-config-react-app": "^7.0.1",
+        "eslint-plugin-flowtype": "^8.0.3",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-prettier": "5.0.0",
+        "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "postcss": "^8.4.31",
+        "postcss-styled-syntax": "^0.4.0",
+        "prettier": "^3.0.3",
+        "prettier-plugin-tailwindcss": "^0.5.4",
+        "prettier-stylelint": "^0.4.2",
+        "tailwindcss": "^3.3.3",
+        "tailwindcss-animate": "^1.0.7",
+        "typescript": "^4.9.3",
+        "vite": "^3.2.4",
+        "vite-tsconfig-paths": "^4.2.0"
+    },
+    "eslintConfig": {
+        "extends": [
+            "./.eslintrc.js"
+        ]
+    }
+}

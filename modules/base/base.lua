@@ -1,3 +1,7 @@
 base = {
-    settings = {}
+    settings = {},
+
+    shared = {},
+    client = {},
+    server = {},
 }

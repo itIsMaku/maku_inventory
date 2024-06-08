@@ -14,6 +14,12 @@ function lib.client.LoadModel(model)
     return model
 end
 
+--- Load a scaleform movie.
+--- @param scaleform string The scaleform name.
+function lib.client.LoadScaleformMovie(scaleform)
+    RequestScaleformMovie(scaleform)
+end
+
 --- @class BlipData
 --- @field coords vector3 The blip coordinates.
 --- @field color number|nil The blip color.
@@ -111,11 +117,37 @@ function lib.client.RenameBlip(blip, label)
     return true
 end
 
+local commandsCooldowns = {}
+
 --- Register a key mapping.
 --- @param options table The key mapping options.
 --- @param callback function The key mapping callback.
 function lib.client.RegisterKey(options, callback)
     local command = string.format('maku_inventory:%s', options.name)
-    RegisterCommand(command, callback, false)
+    RegisterCommand(command, function(client, args, raw)
+        if options.cooldown == nil then
+            callback(client, args, raw)
+            return
+        end
+
+        local cooldown = commandsCooldowns[command]
+        if cooldown ~= nil then
+            lib.shared.debug('Command is on cooldown')
+            return
+        end
+
+        commandsCooldowns[command] = true
+        SetTimeout(options.cooldown, function()
+            commandsCooldowns[command] = nil
+        end)
+
+        callback(client, args, raw)
+    end, false)
     RegisterKeyMapping(command, options.description, options.mapper, options.key)
+end
+
+function lib.client.Disarm()
+    local playerPed = PlayerPedId()
+    ClearPedTasksImmediately(playerPed)
+    SetCurrentPedWeapon(playerPed, joaat('WEAPON_UNARMED'), true)
 end

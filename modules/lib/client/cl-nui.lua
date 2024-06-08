@@ -17,6 +17,6 @@ end
 --- Set the visibility of the NUI
 ---@param visible boolean The visibility to set
 function lib.client.SetFrontendVisibility(visible)
-    lib.client.SendMessage('setVisible', visible)
+    lib.client.SendFrontendMessage('setVisible', visible)
     lib.settings.NUIVisible = visible
 end

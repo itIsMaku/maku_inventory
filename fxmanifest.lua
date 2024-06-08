@@ -15,6 +15,7 @@ shared_scripts {
     'modules/lib/shared/sh-table.lua',
     'modules/lib/shared/sh-cfx.lua',
     'modules/lib/shared/sh-locales.lua',
+    'modules/lib/shared/sh-interval.lua',
 
     -- Base module
     'modules/base/base.lua',
@@ -22,6 +23,7 @@ shared_scripts {
 
     -- Inventory module
     'modules/inventory/inventory.lua',
+    'modules/inventory/shared/sh-main.lua',
 
     -- Items module
     'modules/items/items.lua',
@@ -38,7 +40,9 @@ client_scripts {
     'modules/lib/client/cl-nui.lua',
 
     -- Base module
+    'modules/base/client/cl-init.lua',
     'modules/base/client/cl-main.lua',
+    'modules/base/client/cl-nui.lua',
 
     -- Inventory module
     'modules/inventory/client/cl-main.lua',

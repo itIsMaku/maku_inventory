@@ -1,3 +1,4 @@
 {
-    "keybinds.openInventory": "Otevření inventáře"
+    "keybinds.openInventory": "Otevření inventáře",
+    "inventory.player.title": "Hráč"
 }

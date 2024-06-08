@@ -1,6 +1,6 @@
 function inventory.client.UpdateInventory(inv)
     lib.shared.debug('Updating inventory')
-    lib.shared.debugTable(inv)
+    -- lib.shared.debugTable(inv)
 
     inventory.client.Inventory = inv
 end

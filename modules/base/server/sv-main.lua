@@ -12,6 +12,8 @@ RegisterNetEvent('maku_inventory:load', function()
     local client = source
 
     loadPlayerInventory(client)
+
+    TriggerClientEvent('maku_inventory:load', client)
 end)
 
 RegisterCommand('givetest', function(client)
@@ -21,7 +23,7 @@ RegisterCommand('givetest', function(client)
         {
             'player',
             identifier,
-            'test',
+            'weapon_heavypistol',
             1,
             1,
             '{}'

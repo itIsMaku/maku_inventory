@@ -1,6 +1,6 @@
 fx_version 'cerulean'
 game 'gta5'
-version '0.1.0-alpha'
+version '0.2.0-alpha'
 
 author 'itIsMaku - maku#5434 (itismaku)'
 description 'inventory system'

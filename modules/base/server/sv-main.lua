@@ -11,6 +11,12 @@ end
 RegisterNetEvent('maku_inventory:base:load', function()
     local client = source
 
+    local identifier = framework.server.GetIdentifier(client)
+    if identifier == nil then
+        lib.shared.debug('Skipping identifier for client %d', client)
+        return
+    end
+
     loadPlayerInventory(client)
 
     TriggerClientEvent('maku_inventory:base:load', client)

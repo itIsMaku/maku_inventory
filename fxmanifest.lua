@@ -38,6 +38,7 @@ client_scripts {
     -- Lib module
     'modules/lib/client/cl-cfx.lua',
     'modules/lib/client/cl-nui.lua',
+    'modules/lib/client/cl-callback.lua',
 
     -- Base module
     'modules/base/client/cl-init.lua',
@@ -50,6 +51,8 @@ client_scripts {
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
+    -- Lib module
+    'modules/lib/server/sv-callback.lua',
 
     -- Base module
     'modules/base/server/sv-main.lua',

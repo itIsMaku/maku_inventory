@@ -2,6 +2,8 @@ base.settings.keybinds = {
     inventory = GetConvar('maku_inventory:keybind_inventory', 'F2'),
 }
 
+Player = {}
+
 function base.client.CanOpenInventory()
     if IsPauseMenuActive() then return false end
 
@@ -30,10 +32,27 @@ function base.client.OpenInventory(inventoryType)
         otherInventories = {}
     })
 
+    base.client.SetPedIntoMenu(true)
+
     lib.client.SetFrontendVisibility(true)
     lib.client.SetFrontendFocus(true)
 
-    base.client.SetPedIntoMenu(true)
+    Player.inventoryOpened = true
+
+    return true
+end
+
+function base.client.CloseInventory()
+    if not Player.inventoryOpened then return false, 'inventory_not_opened' end
+
+    base.client.SetPedIntoMenu(false)
+
+    lib.client.SetFrontendVisibility(false)
+    lib.client.SetFrontendFocus(false)
+
+    Player.inventoryOpened = false
+
+    return true
 end
 
 lib.client.RegisterKey(
@@ -45,11 +64,16 @@ lib.client.RegisterKey(
         cooldown = 1000
     },
     function(_, args, _)
-        base.client.OpenInventory('player')
+        local success, error = base.client.OpenInventory('player')
+        if not success then
+            lib.shared.warn('Failed to open inventory: %s', error)
+        end
     end
 )
 
 RegisterNetEvent('maku_inventory:load', function()
+    base.client.LoadNui()
+
     lib.client.Disarm()
 
     SetWeaponsNoAutoswap(false)

@@ -3,6 +3,8 @@ function inventory.client.UpdateInventory(inv)
     -- lib.shared.debugTable(inv)
 
     inventory.client.Inventory = inv
+
+    Player.inventory = inv
 end
 
 RegisterNetEvent('maku_inventory:inventory:updateInventory', inventory.client.UpdateInventory)

@@ -8,9 +8,12 @@ HUD_COLORS = {
 
 base.settings.DrawPed = false
 
-RegisterCommand('stopmenu', function()
-    base.client.SetPedIntoMenu(false)
-end)
+
+function base.client.LoadNui()
+    lib.client.SendFrontendMessage('load', {
+        imagePath = GetConvar('maku_inventory:imagePath', 'items')
+    })
+end
 
 function base.client.SetPedIntoMenu(value)
     base.settings.DrawPed = value
@@ -75,11 +78,8 @@ RegisterNUICallback('close', function(_, callback)
         lib.shared.debug('UI can not be closed so fast')
         return
     end
-    
-    base.client.SetPedIntoMenu(false)
 
-    lib.client.SetFrontendVisibility(false)
-    lib.client.SetFrontendFocus(false)
+    base.client.CloseInventory()
 
     callback(nil)
 end)

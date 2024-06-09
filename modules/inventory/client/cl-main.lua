@@ -60,10 +60,11 @@ function inventory.client.OpenInventory(inventories)
         otherInventories = otherInventories
     })
 
-    base.client.SetPedIntoMenu(true)
 
     lib.client.SetFrontendVisibility(true)
     lib.client.SetFrontendFocus(true)
+
+    base.client.SetPedIntoMenu(true)
 
     Player.inventoryOpened = true
 

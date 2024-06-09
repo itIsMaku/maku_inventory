@@ -77,6 +77,8 @@ end)
 RegisterNUICallback('close', function(_, callback)
     if not base.settings.NUICanClose then
         lib.shared.debug('UI can not be closed so fast')
+
+        callback(nil)
         return
     end
 

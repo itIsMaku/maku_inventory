@@ -10,7 +10,7 @@ const Inventories: React.FC = () => {
 
     useNuiEvent('openInventory', setInventoriesData);
 
-    return inventoriesData ? <div className="flex gap-4 h-full p-20">
+    return inventoriesData ? <div className="flex gap-4 h-full p-20 select-none">
         <Inventory inventoryData={inventoriesData.playerInventory} />
         {inventoriesData.otherInventories.map((inventory, index) => {
             return <Inventory key={index} inventoryData={inventory} />

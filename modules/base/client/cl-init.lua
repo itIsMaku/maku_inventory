@@ -1,3 +1,5 @@
+Player = {}
+
 Citizen.CreateThread(function()
     while not base.settings.NUIReady do
         Citizen.Wait(100)

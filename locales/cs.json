@@ -1,4 +1,6 @@
 {
     "keybinds.openInventory": "Otevření inventáře",
-    "inventory.player.title": "Hráč"
+    "inventory.player.title": "Hráč",
+    "inventory.trunk.title": "Kufr %s",
+    "inventory.glovebox.title": "Kaslík %s"
 }

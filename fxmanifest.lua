@@ -75,6 +75,7 @@ files {
 
     'modules/framework/**/cl-main.lua',
     'configs/items.lua',
+    'configs/vehicles.lua',
 
     'web/build/**/*'
 }

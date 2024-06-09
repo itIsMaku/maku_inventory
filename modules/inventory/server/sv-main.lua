@@ -27,7 +27,7 @@ local function loadInventory(type, name, data)
         table.insert(inv.items, item)
     end
 
-    lib.shared.debugTable(inv)
+    -- lib.shared.debugTable(inv)
 
     return inv
 end
@@ -50,3 +50,16 @@ function inventory.server.UpdateInventory(type, name, inv, client)
     cachedInventories[type][name] = inv
     TriggerClientEvent('maku_inventory:inventory:updateInventory', client, inv)
 end
+
+lib.server.RegisterCallback('getInventories', function(client, inventoriesTypes)
+    local inventories = {}
+    for _, inv in ipairs(inventoriesTypes) do
+        local invInstance = inventory.server.GetInventory(inv.type, inv.name, {
+            maxWeight = inv.maxWeight,
+        })
+
+        table.insert(inventories, invInstance)
+    end
+
+    return inventories
+end)

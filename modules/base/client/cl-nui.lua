@@ -11,7 +11,8 @@ base.settings.DrawPed = false
 
 function base.client.LoadNui()
     lib.client.SendFrontendMessage('load', {
-        imagePath = GetConvar('maku_inventory:imagePath', 'items')
+        imagePath = GetConvar('maku_inventory:imagePath', 'items'),
+        hotbarSlots = GetConvarInt('maku_inventory:hotbarSlots', 6),
     })
 end
 

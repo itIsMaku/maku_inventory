@@ -1,5 +1,6 @@
 base.settings.keybinds = {
-    inventory = GetConvar('maku_inventory:keybind_inventory', 'F2'),
+    Inventory = GetConvar('maku_inventory:keybind_inventory', 'F2'),
+    Hotbar = GetConvar('maku_inventory:keybind_hotbar', 'TAB')
 }
 
 lib.client.RegisterKey(
@@ -7,7 +8,7 @@ lib.client.RegisterKey(
         name = 'openInventory',
         description = lib.shared.GetLocale('keybinds.openInventory'),
         mapper = 'keyboard',
-        key = base.settings.keybinds.inventory,
+        key = base.settings.keybinds.Inventory,
         cooldown = 1000
     },
     function(_, args, _)
@@ -15,17 +16,35 @@ lib.client.RegisterKey(
             {
                 type = 'trunk',
                 name = 'ABC123',
-                model = 'sultanrs'
+                data = {
+                    model = 'sultanrs'
+                }
             },
             {
                 type = 'glovebox',
                 name = 'ABC123',
-                model = 'sultan2'
+                data = {
+                    model = 'sultan2'
+                }
             }
         })
         if not success then
             lib.shared.warn('Failed to open inventory: %s', error)
         end
+    end
+)
+
+lib.client.RegisterKey(
+    {
+        name = 'showHotbar',
+        description = lib.shared.GetLocale('keybinds.showHotbar'),
+        mapper = 'keyboard',
+        key = base.settings.keybinds.Hotbar,
+    },
+    function(_, args, _)
+        if IsNuiFocused() then return end
+
+        lib.client.SendFrontendMessage('showHotbar', true)
     end
 )
 

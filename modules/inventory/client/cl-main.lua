@@ -77,6 +77,7 @@ function inventory.client.CloseInventory()
 
     lib.client.SetFrontendVisibility(false)
     lib.client.SetFrontendFocus(false)
+    lib.client.SendFrontendMessage('closeInventory')
 
     Player.inventoryOpened = false
 

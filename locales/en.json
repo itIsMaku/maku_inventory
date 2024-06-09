@@ -1,5 +1,6 @@
 {
     "keybinds.openInventory": "Open inventory",
+    "keybinds.showHotbar": "Show hotbar",
     "inventory.player.title": "Player",
     "inventory.trunk.title": "Trunk %s",
     "inventory.glovebox.title": "Glovebox %s"

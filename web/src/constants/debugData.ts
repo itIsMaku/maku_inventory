@@ -25,7 +25,7 @@ export const DEBUG_DATA = [
                         name: 'weapon_pistol',
                         label: 'Pistol',
                         amount: 1,
-                        slot: 1,
+                        slot: 2,
                         weight: 10,
                         data: {}
                     },
@@ -33,111 +33,7 @@ export const DEBUG_DATA = [
                         name: 'weapon_pistol',
                         label: 'Pistol',
                         amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
-                        weight: 10,
-                        data: {}
-                    },
-                    {
-                        name: 'weapon_pistol',
-                        label: 'Pistol',
-                        amount: 1,
-                        slot: 1,
+                        slot: 3,
                         weight: 10,
                         data: {}
                     },
@@ -145,7 +41,7 @@ export const DEBUG_DATA = [
                         name: 'cash',
                         label: 'Cash',
                         amount: 1,
-                        slot: 2,
+                        slot: 4,
                         weight: 10,
                         data: {}
                     },
@@ -153,10 +49,42 @@ export const DEBUG_DATA = [
                         name: 'gameboy',
                         label: 'Gameboy',
                         amount: 1,
-                        slot: 3,
+                        slot: 5,
                         weight: 50,
                         data: {}
-                    }
+                    },
+                    {
+                        name: 'weapon_rpg',
+                        label: 'RPG',
+                        amount: 1,
+                        slot: 6,
+                        weight: 50,
+                        data: {}
+                    },
+                    {
+                        name: 'gameboy',
+                        label: 'Gameboy',
+                        amount: 1,
+                        slot: 7,
+                        weight: 50,
+                        data: {}
+                    },
+                    {
+                        name: 'gameboy',
+                        label: 'Gameboy',
+                        amount: 1,
+                        slot: 8,
+                        weight: 50,
+                        data: {}
+                    },
+                    {
+                        name: 'weapon_assaultrifle',
+                        label: 'AK47',
+                        amount: 1,
+                        slot: 9,
+                        weight: 50,
+                        data: {}
+                    },
                 ]
             },
             otherInventories: [

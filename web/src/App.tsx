@@ -5,14 +5,25 @@ import Inventories from './components/Inventories';
 import { isEnvBrowser } from './utils/misc';
 import { useNuiEvent } from './hooks/useNuiEvent';
 import { fetchNui } from './utils/fetchNui';
+import Hotbar from './components/Hotbar';
+import { InventoriesData } from './types';
 
 debugData(DEBUG_DATA);
 
-export let imagePath = 'items';
+export let imagePath = 'images';
+export let hotbarSlots = 6;
 
 const App: React.FC = () => {
+    const [inventoriesData, setInventoriesData] = useState<InventoriesData | null>(null);
+    const [showHotbar, setShowHotbar] = useState<boolean>(true);
+
+    useNuiEvent('openInventory', setInventoriesData);
+    useNuiEvent('closeInventory', () => setInventoriesData(null));
+
+
     useNuiEvent('load', (data: any) => {
-        imagePath = data.imagePath;
+        imagePath = data.imagePath || 'images';
+        hotbarSlots = data.hotbarSlots || 6;
     });
 
     useEffect(() => {
@@ -24,7 +35,8 @@ const App: React.FC = () => {
             backgroundImage: 'url(https://i.imgur.com/hbA4sX5.png)',
             backgroundSize: 'cover',
         } : {}}>
-        <Inventories />
+        {inventoriesData ? <Inventories inventoriesData={inventoriesData} /> : null}
+        {(showHotbar && inventoriesData?.playerInventory) ? <Hotbar playerInventory={inventoriesData.playerInventory} /> : null}
     </div>
 };
 

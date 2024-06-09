@@ -2,20 +2,25 @@ import { useNuiEvent } from "~/hooks/useNuiEvent";
 import Inventory from "./Inventory";
 import { InventoriesData } from "~/types";
 import { useState } from "react";
+import { hotbarSlots } from "~/App";
 
-interface InventoriesProps { }
+interface InventoriesProps {
+    inventoriesData: InventoriesData;
+}
 
-const Inventories: React.FC = () => {
-    const [inventoriesData, setInventoriesData] = useState<InventoriesData | null>(null);
+const getShortedInventory = (inventoryData: InventoriesData['playerInventory']) => {
+    const shortSlots = hotbarSlots;
+    const items = inventoryData.items.filter((item) => item.slot > shortSlots);
+    return { ...inventoryData, items };
+}
 
-    useNuiEvent('openInventory', setInventoriesData);
-
-    return inventoriesData ? <div className="flex gap-4 h-full p-20 select-none">
-        <Inventory inventoryData={inventoriesData.playerInventory} />
+const Inventories: React.FC<InventoriesProps> = ({ inventoriesData }) => {
+    return <div className="flex gap-4 h-full p-20 select-none">
+        <Inventory inventoryData={getShortedInventory(inventoriesData.playerInventory)} />
         {inventoriesData.otherInventories.map((inventory, index) => {
             return <Inventory key={index} inventoryData={inventory} />
         })}
-    </div> : null;
+    </div>
 }
 
 export default Inventories;

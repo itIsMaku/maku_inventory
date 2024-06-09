@@ -1,5 +1,10 @@
-# maku_inventory
-![](https://img.shields.io/github/v/release/itIsMaku/maku_inventory)
+# maku_inventory ![](https://img.shields.io/github/v/release/itIsMaku/maku_inventory)
+
+Inventory system for games based on [CitizenFX framework](https://github.com/citizenfx/fivem), designed and inspired by popular game PUBG.
+
+## Development
+
+The project is currently in alpha development and is not intended for production use.
 
 ## License 
 

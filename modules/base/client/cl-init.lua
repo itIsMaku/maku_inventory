@@ -3,5 +3,5 @@ Citizen.CreateThread(function()
         Citizen.Wait(100)
     end
 
-    TriggerServerEvent('maku_inventory:load')
+    TriggerServerEvent('maku_inventory:base:load')
 end)

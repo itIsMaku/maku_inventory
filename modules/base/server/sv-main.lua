@@ -8,12 +8,12 @@ local function loadPlayerInventory(client)
     TriggerClientEvent('maku_inventory:inventory:updateInventory', client, inventory)
 end
 
-RegisterNetEvent('maku_inventory:load', function()
+RegisterNetEvent('maku_inventory:base:load', function()
     local client = source
 
     loadPlayerInventory(client)
 
-    TriggerClientEvent('maku_inventory:load', client)
+    TriggerClientEvent('maku_inventory:base:load', client)
 end)
 
 RegisterCommand('givetest', function(client)

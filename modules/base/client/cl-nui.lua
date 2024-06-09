@@ -79,7 +79,7 @@ RegisterNUICallback('close', function(_, callback)
         return
     end
 
-    base.client.CloseInventory()
+    inventory.client.CloseInventory()
 
     callback(nil)
 end)

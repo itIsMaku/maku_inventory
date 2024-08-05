@@ -15,8 +15,8 @@ function lib.client.SetFrontendFocus(value)
 end
 
 --- Set the visibility of the NUI
----@param visible boolean The visibility to set
+---@param visible string|nil The visibility to set
 function lib.client.SetFrontendVisibility(visible)
-    lib.client.SendFrontendMessage('setVisible', visible)
+    lib.client.SendFrontendMessage('setVisibility', visible)
     lib.settings.NUIVisible = visible
 end

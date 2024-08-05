@@ -44,7 +44,11 @@ lib.client.RegisterKey(
     function(_, args, _)
         if IsNuiFocused() then return end
 
-        lib.client.SendFrontendMessage('showHotbar', true)
+        lib.client.SetFrontendVisibility(VisibilityTypes.HOTBAR)
+
+        SetTimeout(5000, function()
+            lib.client.SetFrontendVisibility(nil)
+        end)
     end
 )
 

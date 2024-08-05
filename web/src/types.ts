@@ -4,6 +4,8 @@ export type InventoriesData = {
 };
 
 export interface InventoryItem {
+    inventory: string;
+    id: string;
     name: string;
     label: string;
     amount: number;
@@ -19,4 +21,14 @@ export interface InventoryData {
     maxWeight: number;
     weight: number;
     items: InventoryItem[];
+}
+
+export interface DragSource {
+    inventoryName: string;
+    item: InventoryItem | null;
+}
+
+export enum Visibility {
+    INVENTORIES = 'inventories',
+    HOTBAR = 'hotbar',
 }

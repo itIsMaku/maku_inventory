@@ -1,7 +1,13 @@
+import { Visibility } from "~/types";
+
 export const DEBUG_DATA = [
     {
         action: 'setVisible',
         data: true
+    },
+    {
+        action: 'setVisibility',
+        data: Visibility.INVENTORIES
     },
     {
         action: 'openInventory',
@@ -15,9 +21,10 @@ export const DEBUG_DATA = [
                 items: [
                     {
                         name: 'weapon_pistol',
+                        id: 1,
                         label: 'Pistol',
                         amount: 1,
-                        slot: 1,
+                        slot: 7,
                         weight: 10,
                         data: {}
                     },
@@ -25,6 +32,7 @@ export const DEBUG_DATA = [
                         name: 'weapon_pistol',
                         label: 'Pistol',
                         amount: 1,
+                        id: 2,
                         slot: 2,
                         weight: 10,
                         data: {}
@@ -33,6 +41,7 @@ export const DEBUG_DATA = [
                         name: 'weapon_pistol',
                         label: 'Pistol',
                         amount: 1,
+                        id: 3,
                         slot: 3,
                         weight: 10,
                         data: {}
@@ -42,6 +51,7 @@ export const DEBUG_DATA = [
                         label: 'Cash',
                         amount: 1,
                         slot: 4,
+                        id: 4,
                         weight: 10,
                         data: {}
                     },
@@ -50,6 +60,7 @@ export const DEBUG_DATA = [
                         label: 'Gameboy',
                         amount: 1,
                         slot: 5,
+                        id: 5,
                         weight: 50,
                         data: {}
                     },
@@ -58,6 +69,7 @@ export const DEBUG_DATA = [
                         label: 'RPG',
                         amount: 1,
                         slot: 6,
+                        id: 6,
                         weight: 50,
                         data: {}
                     },
@@ -65,7 +77,8 @@ export const DEBUG_DATA = [
                         name: 'gameboy',
                         label: 'Gameboy',
                         amount: 1,
-                        slot: 7,
+                        slot: 9,
+                        id: 7,
                         weight: 50,
                         data: {}
                     },
@@ -74,6 +87,7 @@ export const DEBUG_DATA = [
                         label: 'Gameboy',
                         amount: 1,
                         slot: 8,
+                        id: 8,
                         weight: 50,
                         data: {}
                     },
@@ -81,7 +95,8 @@ export const DEBUG_DATA = [
                         name: 'weapon_assaultrifle',
                         label: 'AK47',
                         amount: 1,
-                        slot: 9,
+                        slot: 1,
+                        id: 9,
                         weight: 50,
                         data: {}
                     },
@@ -99,6 +114,7 @@ export const DEBUG_DATA = [
                             name: 'weapon_carbinerifle',
                             label: 'Carbine Rifle',
                             amount: 1,
+                            id: 11,
                             slot: 1,
                             weight: 500,
                             data: {}
@@ -107,6 +123,7 @@ export const DEBUG_DATA = [
                             name: '9mm250',
                             label: 'Náboje 9mm (250)',
                             amount: 1,
+                            id: 13,
                             slot: 2,
                             weight: 1300,
                             data: {}
@@ -123,6 +140,7 @@ export const DEBUG_DATA = [
                         {
                             name: 'bread',
                             label: 'Bread',
+                            id: 15,
                             amount: 1,
                             slot: 1,
                             weight: 300,

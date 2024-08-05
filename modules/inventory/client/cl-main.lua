@@ -60,8 +60,7 @@ function inventory.client.OpenInventory(inventories)
         otherInventories = otherInventories
     })
 
-
-    lib.client.SetFrontendVisibility(true)
+    lib.client.SetFrontendVisibility(VisibilityTypes.INVENTORIES)
     lib.client.SetFrontendFocus(true)
 
     base.client.SetPedIntoMenu(true)
@@ -76,7 +75,7 @@ function inventory.client.CloseInventory()
 
     base.client.SetPedIntoMenu(false)
 
-    lib.client.SetFrontendVisibility(false)
+    lib.client.SetFrontendVisibility(nil)
     lib.client.SetFrontendFocus(false)
     lib.client.SendFrontendMessage('closeInventory')
 

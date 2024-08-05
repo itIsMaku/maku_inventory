@@ -6,6 +6,11 @@ HUD_COLORS = {
     ACTIVE = { index = 117, r = 0, g = 0, b = 0, a = 0 }
 }
 
+VisibilityTypes = {
+    INVENTORIES = 'inventories',
+    HOTBAR = 'hotbar'
+}
+
 base.settings.DrawPed = false
 
 
@@ -13,6 +18,11 @@ function base.client.LoadNui()
     lib.client.SendFrontendMessage('load', {
         imagePath = GetConvar('maku_inventory:imagePath', 'items'),
         hotbarSlots = GetConvarInt('maku_inventory:hotbarSlots', 6),
+        inventories = {
+            playerInventory = Player.inventory,
+            otherInventories = {}
+        },
+        inventoriesTitle = nil -- lib.shared.GetLocale('inventories.title'),
     })
 end
 
